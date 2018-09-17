@@ -5,4 +5,4 @@ applications:
   routes:
   - route: ts-pal-tracker-sp.apps.pikes.pal.pivotal.io
   env:
-    WELCOME_MESSAGE: Hello from Cloud Foundry Production
+    WELCOME_MESSAGE: Hello from the production environment
