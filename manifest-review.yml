@@ -5,4 +5,4 @@ applications:
   routes:
   - route: ts-pal-tracker-sp-review.apps.pikes.pal.pivotal.io
   env:
-    WELCOME_MESSAGE: Hello from Cloud Foundry Review
+    WELCOME_MESSAGE: Hello from the review environment
