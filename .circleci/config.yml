@@ -59,8 +59,9 @@ jobs:
           name: Deploy
           command: |
             cd $EXTRACT_DEST
-            ./migrate-databases.sh pal-tracker . /root/project
+            
             cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $ENVIRONMENT
+            ./migrate-databases.sh pal-tracker . /root/project
             cf push -f manifest-$ENVIRONMENT.yml
 
   deployToProd:
@@ -102,8 +103,9 @@ jobs:
           name: Deploy
           command: |
             cd $EXTRACT_DEST
-            ./migrate-databases.sh pal-tracker . /root/project
+            
             cf login -a $CF_API -u $CF_USERNAME -p $CF_PASSWORD -o $CF_ORG -s $ENVIRONMENT
+            ./migrate-databases.sh pal-tracker . /root/project
             cf push -f manifest-$ENVIRONMENT.yml
 
 workflows:
