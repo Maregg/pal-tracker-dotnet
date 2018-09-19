@@ -12,6 +12,7 @@ using Steeltoe.CloudFoundry.Connector.MySql.EFCore;
 using Steeltoe.Common.HealthChecks;
 using Steeltoe.Management.CloudFoundry;
 using Steeltoe.Management.Endpoint.Info;
+using Steeltoe.Management.Endpoint.Loggers;
 
 namespace PalTracker
 {
@@ -52,6 +53,8 @@ namespace PalTracker
             services.AddSingleton<IOperationCounter<TimeEntry>, OperationCounter<TimeEntry>>();
 
             services.AddSingleton<IInfoContributor,TimeEntryInfoContributor>();
+
+            services.AddLoggersActuator(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,6 +67,7 @@ namespace PalTracker
 
             app.UseMvc();
             app.UseCloudFoundryActuators();
+            app.UseLoggersActuator();
         }
     }
 }
